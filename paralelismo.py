@@ -12,12 +12,16 @@ def empacotar_bala():
 def atender_balcao():
     print('Veificando se há clientes')
 
-    yield from asyncio.sleep(0.1)
+    yield from asyncio.sleep(0.1) 
+
+    #asyncio.sleep() => Utilizado para a sintaxe @asyncio.coroutine
 
 
 
 
-loop = asyncio.get_event_loop()
+# definindo um loop
+loop = asyncio.get_event_loop() # definição do loop com a sintaxe @coroutine.
+
 tasks = [loop.create_task(empacotar_bala()),
         loop.create_task(atender_balcao())]
 
