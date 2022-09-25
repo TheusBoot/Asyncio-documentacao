@@ -12,6 +12,7 @@ def empacotar_bala():
 def atender_balcao():
     print('Veificando se há clientes')
 
+    #para pra ver se tem um cliente 
     yield from asyncio.sleep(0.1) 
 
     #asyncio.sleep() => Utilizado para a sintaxe @asyncio.coroutine
