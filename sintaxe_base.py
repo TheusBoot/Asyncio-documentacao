@@ -2,7 +2,7 @@
 from asyncio import get_event_loop, coroutine
 
 
-@coroutine
+@coroutine # Funções coroutine são uma promessa, são paralelas...
 def print_async(msg:str) -> None:
     print(f'ASYNC:{msg}')
 
@@ -25,6 +25,15 @@ loop.close()
 # SAIDA    OI
 
 #------------------------------------------------------------------
+
+@asyncio.coroutine
+def print_async(path):
+    yield from ping_server('127.0.0.1') 
+    #YIELD FROM == aguardar até que essa tarefa seja concluída.
+
+loop = get_event_loop()
+loop.run_until_complete(print_async('OI'))
+loop.close()
 
 
 
